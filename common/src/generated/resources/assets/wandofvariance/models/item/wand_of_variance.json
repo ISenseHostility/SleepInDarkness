@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "wandofvariance:item/wand_of_variance"
+    "layer0": "sleep_in_darkness:item/sleep_in_darkness"
   }
 }

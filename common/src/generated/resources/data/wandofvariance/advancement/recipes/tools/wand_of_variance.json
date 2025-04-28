@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "wandofvariance:wand_of_variance"
+        "recipe": "sleep_in_darkness:sleep_in_darkness"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "wandofvariance:wand_of_variance"
+      "sleep_in_darkness:sleep_in_darkness"
     ]
   }
 }
