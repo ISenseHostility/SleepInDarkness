@@ -69,7 +69,7 @@ task curseforge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
     }
     if (projectId) {
         def mainFile = upload(findProperty("curseforge_project_id"), file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar"))
-        mainFile.displayName = "Wand of Variance v${version} Fabric"
+        mainFile.displayName = "${mod_name} v${version} Fabric"
         mainFile.changelog = rootProject.file('CHANGELOG.md').text
         mainFile.addRequirement("fabric-api")
         mainFile.addRequirement("balm")
@@ -81,7 +81,7 @@ task curseforge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
 modrinth {
     token = project.findProperty("modrinth.token") ?: System.getenv("MODRINTH_TOKEN") ?: "none"
     projectId = findProperty("modrinth_project_id")
-    versionName = "Wand of Variance v${version} Fabric"
+    versionName = "${mod_name} v${version} Fabric"
     versionType = "release"
     versionNumber = project.version + "+fabric-" + project.minecraft_version
     uploadFile = remapJar

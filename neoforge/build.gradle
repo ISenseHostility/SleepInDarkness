@@ -62,7 +62,7 @@ task curseforge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
     }
     if (projectId) {
         def mainFile = upload(findProperty("curseforge_project_id"), file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar"))
-        mainFile.displayName = "Wand of Variance v${version} NeoForge"
+        mainFile.displayName = "${mod_name} v${version} NeoForge"
         mainFile.changelog = rootProject.file('CHANGELOG.md').text
         mainFile.addRequirement("balm")
         project.minecraft_versions.split(',').toList().each { mainFile.addGameVersion(it) }
@@ -74,7 +74,7 @@ task curseforge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
 modrinth {
     token = project.findProperty("modrinth.token") ?: System.getenv("MODRINTH_TOKEN") ?: "none"
     projectId = findProperty("modrinth_project_id")
-    versionName = "Wand of Variance v${version} NeoForge"
+    versionName = "${mod_name} v${version} NeoForge"
     versionType = "release"
     versionNumber = project.version + "+neoforge-" + project.minecraft_version
     uploadFile = jar
